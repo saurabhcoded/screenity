@@ -128,43 +128,7 @@ const Sandbox = () => {
             <div className="subtitle">
               {chrome.i18n.getMessage("sandboxProgressDescription")}
             </div>
-            {typeof contentState.openModal === "function" && (
-              <div
-                className="button-stop"
-                onClick={() => {
-                  contentState.openModal(
-                    chrome.i18n.getMessage("havingIssuesModalTitle"),
-                    chrome.i18n.getMessage("havingIssuesModalDescription"),
-                    chrome.i18n.getMessage("restoreRecording"),
-                    chrome.i18n.getMessage("havingIssuesModalButton2"),
-                    () => {
-                      chrome.runtime.sendMessage({ type: "restore-recording" });
-                      // chrome.runtime.sendMessage(
-                      //   {
-                      //     type: "check-restore",
-                      //   },
-                      //   (response) => {
-                      //     if (response.restore) {
-                      //       chrome.runtime.sendMessage({
-                      //         type: "indexed-db-download",
-                      //       });
-                      //     } else {
-                      //       alert(chrome.i18n.getMessage("noRecordingFound"));
-                      //     }
-                      //   }
-                      // );
-                    },
-                    () => {
-                      chrome.runtime.sendMessage({ type: "report-bug" });
-                    }
-                  );
-                }}
-              >
-                {chrome.i18n.getMessage("havingIssuesButton")}
-              </div>
-            )}
           </div>
-          <HelpButton />
           <div className="setupBackgroundSVG"></div>
         </div>
       )}

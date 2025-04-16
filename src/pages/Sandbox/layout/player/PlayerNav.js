@@ -30,26 +30,6 @@ const PlayerNav = () => {
         >
           <img src={URL + "editor/logo.svg"} alt="Screenity Logo" />
         </div>
-        <div className={styles.navRight}>
-          <button
-            className="button simpleButton blueButton"
-            onClick={() => {
-              chrome.runtime.sendMessage({ type: "open-help" });
-            }}
-          >
-            <ReactSVG src={StarIcon} />
-            {chrome.i18n.getMessage("getHelpNav")}
-          </button>
-          <button
-            className="button primaryButton"
-            onClick={() => {
-              chrome.runtime.sendMessage({ type: "follow-twitter" });
-            }}
-          >
-            <ReactSVG src={HeartIcon} />{" "}
-            {chrome.i18n.getMessage("followForUpdates")}
-          </button>
-        </div>
       </div>
     </div>
   );

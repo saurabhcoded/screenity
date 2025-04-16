@@ -18,7 +18,6 @@ const Content = () => {
         {contentState.mode === "player" && <VideoPlayer />}
         {contentState.mode === "crop" && <CropperWrap />}
       </div>
-      <HelpButton />
     </div>
   );
 };

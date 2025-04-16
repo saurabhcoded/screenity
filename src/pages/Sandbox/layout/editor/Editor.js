@@ -31,7 +31,6 @@ const Editor = ({ ffmpeg }) => {
       <EditorNav />
       <VideoPlayer onSeek={handleSeek} />
       <TrimUI blob={contentState.blob} onSeek={handleSeek} />
-      <HelpButton />
     </div>
   );
 };
