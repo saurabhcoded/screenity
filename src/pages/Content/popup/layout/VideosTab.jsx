@@ -13,17 +13,6 @@ import {
 } from "../../images/popup/images";
 
 const VideosTab = () => {
-  const [URL, SetURL] = useState("https://tally.so/r/npojNV");
-
-  useEffect(() => {
-    const locale = chrome.i18n.getMessage("@@ui_locale");
-    if (!locale.includes("en")) {
-      SetURL(
-        `https://translate.google.com/translate?sl=en&tl=${locale}&u=https://tally.so/r/npojNV`
-      );
-    }
-  }, []);
-
   // Example temporary data
   const videos = [
     { name: "Bug report", thumbnail: TempTwitter, date: "3 minutes ago" },
@@ -39,18 +28,6 @@ const VideosTab = () => {
 
   return (
     <div className="video-ui">
-      <div className="ModalSoon">
-        <div className="ModalSoonEmoji">👋</div>
-        <div className="ModalSoonTitle">
-          {chrome.i18n.getMessage("shareModalSandboxTitle")}
-        </div>
-        <div className="ModalSoonDescription">
-          {chrome.i18n.getMessage("shareModalSandboxDescription")}
-        </div>
-        <a className="ModalSoonButton" href={URL} target="_blank">
-          {chrome.i18n.getMessage("shareModalSandboxButton")}
-        </a>
-      </div>
       <Tabs.Root className="TabsRoot" defaultValue="personal">
         <Tabs.List className="TabsList" aria-label="Manage your account">
           <div className="TabsTriggerWrap">

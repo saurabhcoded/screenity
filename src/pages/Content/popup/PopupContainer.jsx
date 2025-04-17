@@ -312,14 +312,6 @@ const PopupContainer = (props) => {
               setOpen={setOpen}
             />
             <div
-              style={{ marginBottom: "-4px", cursor: "pointer" }}
-              onClick={() => {
-                window.open(URL, "_blank");
-              }}
-            >
-              <HelpIconPopup />
-            </div>
-            <div
               className="popup-control popup-close"
               onClick={() => {
                 setContentState((prevContentState) => ({
@@ -349,7 +341,7 @@ const PopupContainer = (props) => {
                   aria-label="Manage your account"
                   tabIndex={0}
                 >
-                  <div className="pill-anim" ref={pillRef}></div>
+                  {/* <div className="pill-anim" ref={pillRef}></div>
                   <Tabs.Trigger
                     className="TabsTrigger tl"
                     value="record"
@@ -364,30 +356,10 @@ const PopupContainer = (props) => {
                       />
                     </div>
                     {chrome.i18n.getMessage("recordTab")}
-                  </Tabs.Trigger>
-                  <Tabs.Trigger
-                    className="TabsTrigger tl"
-                    value="dashboard"
-                    ref={videoTabRef}
-                    tabIndex={0}
-                  >
-                    <div className="TabsTriggerIcon">
-                      <img
-                        src={
-                          tab === "dashboard"
-                            ? VideoTabActive
-                            : VideoTabInactive
-                        }
-                      />
-                    </div>
-                    {chrome.i18n.getMessage("videosTab")}
-                  </Tabs.Trigger>
+                  </Tabs.Trigger> */}
                 </Tabs.List>
                 <Tabs.Content className="TabsContent tl" value="record">
                   <RecordingTab shadowRef={props.shadowRef} />
-                </Tabs.Content>
-                <Tabs.Content className="TabsContent tl" value="dashboard">
-                  <VideosTab />
                 </Tabs.Content>
               </Tabs.Root>
             )}

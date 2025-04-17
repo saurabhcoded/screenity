@@ -57,6 +57,9 @@ $container-border: 1px solid $color-border;
 $container-shadow: drop-shadow(0px 4px 100px rgba(0, 0, 0, 0.35));
 $container-shadow-focus: 2px 2px 10px rgba(0, 0, 0, 0.1);
 
+/* Button */
+$button-border-radius: 10px;
+
 /* Gradients */
 $gradient-primary: radial-gradient(117.41% 117.78% at 35.44% 0%, #2BAEF8 23.13%, #3582F6 46.35%, #486DEF 74.48%, #7B9AEA 100%);
 $gradient-shadow-primary: drop-shadow(0px 4px 20px rgba(86, 123, 218, 0.5));
