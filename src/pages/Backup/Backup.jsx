@@ -57,7 +57,7 @@ const Backup = () => {
   const initLocalDirectory = async (directoryHandle, prompt = true) => {
     const permissions = await verifyFilePermissions(directoryHandle);
     if (permissions) {
-      let videoTitle = `Screenity video - ${new Date().toLocaleString("en-US", {
+      let videoTitle = `Corecord video - ${new Date().toLocaleString("en-US", {
         month: "short",
         day: "numeric",
         year: "numeric",
@@ -142,14 +142,14 @@ const Backup = () => {
 
     let directoryHandle = directoryPicker;
 
-    // Check if the selected directory is the "Screenity recordings" folder
-    if (directoryPicker.name === "Screenity Recordings") {
+    // Check if the selected directory is the "Corecord recordings" folder
+    if (directoryPicker.name === "Corecord Recordings") {
       // Use the selected directory directly
       directoryHandle = directoryPicker;
     } else {
-      // If not, create the "Screenity recordings" folder within it
+      // If not, create the "Corecord recordings" folder within it
       directoryHandle = await directoryPicker.getDirectoryHandle(
-        "Screenity Recordings",
+        "Corecord Recordings",
         { create: true }
       );
     }
