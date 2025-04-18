@@ -1,39 +1,32 @@
 import React, {
-  useState,
-  useEffect,
   useContext,
+  useEffect,
   useLayoutEffect,
   useRef,
+  useState,
 } from "react";
-import * as Tabs from "@radix-ui/react-tabs";
 
 import {
-  RecordTabActive,
-  RecordTabInactive,
-  VideoTabActive,
-  VideoTabInactive,
-  TempLogo,
   ProfilePic,
+  TempLogo
 } from "../images/popup/images";
 
-import { Rnd } from "react-rnd";
+import {Rnd} from "react-rnd";
 
 import {
   CloseIconPopup,
-  GrabIconPopup,
-  HelpIconPopup,
+  HelpIconPopup
 } from "../toolbar/components/SVG";
 
 /* Component import */
 import RecordingTab from "./layout/RecordingTab";
-import VideosTab from "./layout/VideosTab";
 
 // Layouts
 import Announcement from "./layout/Announcement";
 import SettingsMenu from "./layout/SettingsMenu";
 
 // Context
-import { contentStateContext } from "../context/ContentState";
+import {contentStateContext} from "../context/ContentState";
 
 const PopupContainer = (props) => {
   const [contentState, setContentState] = useContext(contentStateContext);
@@ -330,38 +323,7 @@ const PopupContainer = (props) => {
           <div className="popup-content">
             {onboarding && <Announcement setOnboarding={setOnboarding} />}
             {!onboarding && (
-              <Tabs.Root
-                className="TabsRoot tl"
-                defaultValue="record"
-                onValueChange={onValueChange}
-              >
-                <Tabs.List
-                  className="TabsList tl"
-                  data-value={tab}
-                  aria-label="Manage your account"
-                  tabIndex={0}
-                >
-                  {/* <div className="pill-anim" ref={pillRef}></div>
-                  <Tabs.Trigger
-                    className="TabsTrigger tl"
-                    value="record"
-                    ref={recordTabRef}
-                    tabIndex={0}
-                  >
-                    <div className="TabsTriggerIcon">
-                      <img
-                        src={
-                          tab === "record" ? RecordTabActive : RecordTabInactive
-                        }
-                      />
-                    </div>
-                    {chrome.i18n.getMessage("recordTab")}
-                  </Tabs.Trigger> */}
-                </Tabs.List>
-                <Tabs.Content className="TabsContent tl" value="record">
-                  <RecordingTab shadowRef={props.shadowRef} />
-                </Tabs.Content>
-              </Tabs.Root>
+              <RecordingTab shadowRef={props.shadowRef} />
             )}
           </div>
           {contentState.settingsOpen && (

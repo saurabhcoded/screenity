@@ -46,7 +46,7 @@ const RecordingTab = (props) => {
           aria-label="Manage your account"
           tabIndex={0}
         >
-          <Tabs.Trigger className="TabsTrigger" value="screen" tabIndex={0}>
+       <Tabs.Trigger className="TabsTrigger" value="screen" tabIndex={0}>
             <div className="TabsTriggerLabel">
               <div className="TabsTriggerIcon">
                 <img
@@ -73,8 +73,8 @@ const RecordingTab = (props) => {
               </div>
               <span>{chrome.i18n.getMessage("tabType")}</span>
             </div>
-          </Tabs.Trigger>
-          <Tabs.Trigger className="TabsTrigger" value="camera" tabIndex={0}>
+          </Tabs.Trigger> 
+        {/*   <Tabs.Trigger className="TabsTrigger" value="camera" tabIndex={0}>
             <div className="TabsTriggerLabel">
               <div className="TabsTriggerIcon">
                 <img
@@ -107,7 +107,7 @@ const RecordingTab = (props) => {
               </div>
               <span>{chrome.i18n.getMessage("MockupType")}</span>
             </div>
-          </Tabs.Trigger>
+          </Tabs.Trigger> */}
         </Tabs.List>
         <Tabs.Content className="TabsContent" value="screen">
           <RecordingType shadowRef={props.shadowRef} />
